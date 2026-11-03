@@ -3,39 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Rob | Projects</title>
+<title>Robert Conforti | Projects</title>
+<meta name="description" content="Projects by Robert Conforti, computer engineering student at the University of Michigan: embedded systems, software and security.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F1F3EE;--ink:#14231D;--mute:#53645B;--rule:#C5CEC4;--pcb:#0F3B2E;--gold:#8A6A0A;--chip:#E3E8E0;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+:root{--bg:#F1F3EE;--ink:#14231D;--mute:#53645B;--rule:#C5CEC4;--pcb:#0F3B2E;--gold:#8A6A0A;--chip:#E3E8E0;color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1511;--ink:#E4EBE3;--mute:#98A89F;--rule:#2A3A32;--pcb:#7FC8A6;--gold:#E0B93C;--chip:#16231C;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0C1511;--ink:#E4EBE3;--mute:#98A89F;--rule:#2A3A32;--pcb:#7FC8A6;--gold:#E0B93C;--chip:#16231C;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "IBM Plex Sans",system-ui,sans-serif}
 main{max-width:62rem;margin:0 auto;padding:4rem 1.5rem 3rem}
 h1,h2,h3{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;margin:0}
-h1{font-weight:800;font-size:clamp(3rem,10vw,6.5rem);line-height:.92;letter-spacing:-.03em}
-.intro{max-width:36rem;margin:1.5rem 0 0;color:var(--mute)}
+h1{font-weight:800;font-size:clamp(2.8rem,9vw,5.75rem);line-height:.95;letter-spacing:-.03em}
+.intro{max-width:37rem;margin:1.5rem 0 0;color:var(--mute)}
 .intro b{color:var(--ink);font-weight:500}
+nav{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;margin-top:1.75rem}
+nav a,footer a{color:var(--ink);font-weight:500;text-underline-offset:4px}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 h2{font-weight:800;font-size:1.5rem;letter-spacing:-.01em;margin:4.5rem 0 .5rem;padding-top:1rem;border-top:3px solid var(--pcb)}
-.sub{margin:0 0 1rem;color:var(--mute);max-width:36rem}
+.sub{margin:0 0 1rem;color:var(--mute);max-width:37rem}
 .proj{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1rem 2.5rem;padding:1.75rem 0;border-top:1px solid var(--rule)}
 .proj h3{font-weight:500;font-size:1.3rem}
-.proj p{margin:.5rem 0 0;max-width:34rem}
-dl{margin:0;font:400 .85rem/1.5 "IBM Plex Mono",ui-monospace,monospace}
+.proj p{margin:.5rem 0 0;max-width:35rem}
+dl{margin:0;align-self:start;font:400 .85rem/1.5 "IBM Plex Mono",ui-monospace,monospace}
 dl div{display:grid;grid-template-columns:5.5rem 1fr;gap:.75rem;padding:.35rem 0;border-bottom:1px dotted var(--rule)}
 dt{color:var(--gold)}dd{margin:0;overflow-wrap:anywhere}
-.link{display:inline-block;margin-top:.75rem;color:var(--pcb);font-weight:500;text-underline-offset:3px}
-.link:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.more{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem 2.5rem;margin-top:.5rem}
-.more h3{font-weight:500;font-size:1.05rem;padding-top:.9rem;border-top:1px solid var(--rule)}
-.more p{margin:.25rem 0 0;color:var(--mute);font-size:.98rem}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;padding:0;list-style:none}
 .tags li{background:var(--chip);padding:.2rem .6rem;border-radius:3px;font:400 .85rem "IBM Plex Mono",ui-monospace,monospace}
 footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);display:flex;flex-wrap:wrap;gap:.5rem 2rem}
-footer a{color:var(--ink);text-underline-offset:3px}
 @media (max-width:42rem){.proj{grid-template-columns:1fr}main{padding-top:2.5rem}}
 </style>
 </head>
@@ -43,22 +41,32 @@ footer a{color:var(--ink);text-underline-offset:3px}
 <main>
 <header>
 <h1>Robert Conforti</h1>
-<p class="intro">I’m a computer engineering student at the University of Michigan, graduating in December 2026. I like the part of the stack where code meets a physical thing: a motor that has to stay upright, a switch that has to report its own power draw. <b>Below are projects I’ve built, from firmware to search algorithms.</b></p>
+<p class="intro">I’m a computer engineering student at the University of Michigan, graduating in December 2026. I like the part of the stack where code meets a physical thing: a robot that has to stay upright, a storage cluster that has to survive a dead node. <b>Below is a mix of firmware, systems, algorithms and security work.</b> Code for most of it is on my GitHub.</p>
+<nav aria-label="Sections">
+<a href="#hardware">Hardware</a>
+<a href="#software">Software</a>
+<a href="#security">Security</a>
+<a href="https://github.com/RobConfor">GitHub</a>
+<a href="https://www.linkedin.com/in/robert-conforti-979606281/">LinkedIn</a>
+<a href="mailto:rconfor@umich.edu">Email</a>
+</nav>
 </header>
 
-<h2>Hardware and embedded</h2>
-<p class="sub">Firmware, sensors and boards.</p>
+<h2 id="hardware">Hardware and embedded</h2>
+<p class="sub">Firmware, sensors, boards and the occasional soldering iron.</p>
 
 <article class="proj">
 <div>
-<h3>Self-balancing Autonomous robot</h3>
-<p>A two-wheeled robot that holds itself upright using a PID controller running on an ARM Cortex-M4. It reads its sensors and talks to peripherals over I2C, UART and SPI.</p>
-<a class="link" href="#">Code and write-up</a>
+<h3>Self-balancing autonomous robot</h3>
+<p>A robot that keeps itself upright while it also tracks targets, avoids obstacles and accepts manual control. I wrote a priority-based state machine on an STM32 Nucleo to coordinate those four jobs across I2C, UART and SPI, plus a PID loop above 100 Hz that turns BNO055 IMU readings into motor commands.</p>
+<p>I designed the power side too: a 12V LiPo stepped down to clean 3.3V and 5V rails, and an emergency stop interrupt triggered by a VL53L0X distance sensor. The chassis cracked under load and we rebuilt it twice, and a few bugs we blamed on firmware turned out to be loose wiring.</p>
 </div>
 <dl>
-<div><dt>Chip</dt><dd>STM32 (Cortex-M4)</dd></div>
-<div><dt>Control</dt><dd>PID loop</dd></div>
+<div><dt>Chip</dt><dd>STM32 Nucleo (Cortex-M4)</dd></div>
+<div><dt>Control</dt><dd>PID, 100 Hz+</dd></div>
+<div><dt>Sensors</dt><dd>BNO055 IMU, VL53L0X</dd></div>
 <div><dt>Buses</dt><dd>I2C, UART, SPI</dd></div>
+<div><dt>Course</dt><dd>EECS 373, April 2026</dd></div>
 </dl>
 </article>
 
@@ -66,7 +74,6 @@ footer a{color:var(--ink);text-underline-offset:3px}
 <div>
 <h3>AltiLink</h3>
 <p>A portable, battery powered PoE switch that doubles as a field analyzer, so you can see what each port is delivering while you’re standing at the install. Built with a team for EECS 473, Advanced Embedded Systems.</p>
-<a class="link" href="#">Proposal and design docs</a>
 </div>
 <dl>
 <div><dt>Compute</dt><dd>Raspberry Pi 5</dd></div>
@@ -76,59 +83,209 @@ footer a{color:var(--ink);text-underline-offset:3px}
 </dl>
 </article>
 
-<h2>Algorithms and software</h2>
-<p class="sub">Things I wrote to understand how they work.</p>
-
 <article class="proj">
 <div>
-<h3>Chess engine</h3>
-<p>A chess engine that searches ahead with alpha-beta pruning to skip branches that can’t change the result.</p>
-<a class="link" href="#">Code</a>
+<h3>Four-function calculator on an FPGA</h3>
+<p>A calculator on the DE2-115 board, written in Verilog. A controller and datapath handle arithmetic on 11-bit two’s complement integers, built from adders, multiplexers and converters. I debugged the state machines in ModelSim before synthesizing the design in Quartus.</p>
 </div>
 <dl>
-<div><dt>Search</dt><dd>Alpha-beta pruning</dd></div>
+<div><dt>Board</dt><dd>DE2-115</dd></div>
+<div><dt>Language</dt><dd>Verilog</dd></div>
+<div><dt>Tools</dt><dd>Quartus, ModelSim</dd></div>
+<div><dt>Course</dt><dd>EECS 270, April 2024</dd></div>
 </dl>
 </article>
 
 <article class="proj">
 <div>
-<h3>Optimization algorithms</h3>
-<p>A set of solvers for graph and routing problems: Prim’s minimum spanning tree, a greedy traveling salesman heuristic, and a branch-and-bound solver that finds the exact tour.</p>
-<a class="link" href="#">Code</a>
+<h3>Geiger-Müller counter</h3>
+<p>For ENGR 100 I built a custom Geiger-Müller counter and field tested it to find hidden radioactive material. I designed lead and copper attenuators to separate the signal from interference, then wrote up the results as technical memos.</p>
 </div>
 <dl>
-<div><dt>Lang</dt><dd>C++</dd></div>
-<div><dt>Methods</dt><dd>MST, greedy, branch and bound</dd></div>
+<div><dt>Hardware</dt><dd>Geiger-Müller tube</dd></div>
+<div><dt>Shielding</dt><dd>Lead, copper</dd></div>
+<div><dt>Course</dt><dd>ENGR 100, January 2024</dd></div>
+</dl>
+</article>
+
+<h2 id="software">Software and systems</h2>
+<p class="sub">Mostly things I wrote from scratch to understand how they work.</p>
+
+<article class="proj">
+<div>
+<h3>Distributed file storage system</h3>
+<p>A fault tolerant storage system that splits files into checksummed chunks and replicates each chunk across separate Docker storage nodes, with PostgreSQL holding the metadata. When a node dies it is detected in about 15 seconds, files stay downloadable from the surviving copies, and full replication is back in under a minute. A background scrubber finds and repairs silent disk corruption.</p>
+<p>I wrote the engineering spec, approved the architecture and 23 design decisions, and directed AI coding agents (Claude Code) through a six phase build, checking each phase against acceptance criteria before moving on. 65 automated tests cover live node crashes, disk corruption, database outages and API crashes mid upload, with zero data loss. It streamed 512 MiB files at up to 280 MiB/s using only 25 MiB of server memory.</p>
+</div>
+<dl>
+<div><dt>Stack</dt><dd>Go, PostgreSQL, Docker</dd></div>
+<div><dt>Monitoring</dt><dd>Prometheus, Grafana</dd></div>
+<div><dt>Recovery</dt><dd>~15 s detect, &lt;1 min re-replicate</dd></div>
+<div><dt>Tests</dt><dd>65 automated</dd></div>
+<div><dt>When</dt><dd>October 2026</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Terminal chess engine</h3>
+<p>A chess engine in C++ written from scratch: legal move generation, board state and rule validation on fixed size arrays and vectors. It picks moves with Negamax and alpha-beta pruning over a heuristic evaluation, and spreads move evaluation across CPU cores with std::thread, atomic work distribution and mutex protected exception handling.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>C++</dd></div>
+<div><dt>Search</dt><dd>Negamax, alpha-beta</dd></div>
+<div><dt>Threads</dt><dd>std::thread, atomics</dd></div>
+<div><dt>When</dt><dd>January 2026</dd></div>
 </dl>
 </article>
 
 <article class="proj">
 <div>
 <h3>In-memory database query engine</h3>
-<p>A small query engine that keeps each table behind both a hash index and a binary search tree, and joins tables with a hash join.</p>
-<a class="link" href="#">Code</a>
+<p>A command driven database (CREATE, INSERT, PRINT, DELETE, GENERATE, JOIN) with typed columns and pluggable indexes. Each column can carry a hash index and a binary search tree, and queries pick whichever one fits the filter, falling back to a linear scan when neither does.</p>
+<p>JOIN uses a hash join that reuses an existing index or builds a temporary one, which brings the cost from O(n·m) down to roughly O(n+m).</p>
 </div>
 <dl>
-<div><dt>Indexes</dt><dd>Hash, BST</dd></div>
-<div><dt>Joins</dt><dd>Hash join</dd></div>
+<div><dt>Language</dt><dd>C++</dd></div>
+<div><dt>Indexes</dt><dd>Hash table, BST</dd></div>
+<div><dt>Join</dt><dd>Hash join</dd></div>
+<div><dt>When</dt><dd>March 2025</dd></div>
 </dl>
 </article>
 
-<div class="more">
-<div><h3>Graph search and pathfinding</h3><p>Breadth first and depth first search engines for finding routes through a graph.</p></div>
-<div><h3>Priority queue event simulation</h3><p>A simulation that processes events in time order using a priority queue.</p></div>
-<div><h3>Dog breed classifier</h3><p>A model that predicts a dog’s breed from a photo.</p></div>
+<article class="proj">
+<div>
+<h3>Route planning for food delivery</h3>
+<p>Prim’s algorithm for minimum spanning trees over 2D coordinates, including a variant that forbids edges between safe and wild delivery zones. On top of it sit a greedy farthest insertion heuristic for the traveling salesman problem and an exact branch and bound solver whose MST based lower bound prunes the search far below brute force. I also compared Prim’s and Kruskal’s on different graph shapes.</p>
 </div>
+<dl>
+<div><dt>Language</dt><dd>C++</dd></div>
+<div><dt>Methods</dt><dd>MST, greedy TSP, branch and bound</dd></div>
+<div><dt>When</dt><dd>April 2025</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Pirate treasure pathfinding</h3>
+<p>One search engine that runs as BFS or DFS depending on whether the frontier is a queue or a stack. It searches a grid map in two phases, open water and then island, and rebuilds the winning path by tracking the previous direction at each node. Command line flags set the search order and output, and it reads both dense grid and sparse coordinate input.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>C++</dd></div>
+<div><dt>Search</dt><dd>BFS, DFS</dd></div>
+<div><dt>Output</dt><dd>Coordinate list, ASCII map</dd></div>
+<div><dt>When</dt><dd>January 2025</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Zombie tower defense simulation</h3>
+<p>A discrete event simulation of a multi round fight, where a priority queue with a custom comparator (arrival time, then health, then tie breakers) always resolves the most urgent target first. A two heap design tracks the running median of zombie lifetimes in O(log n) per update without storing or re-sorting the data.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>C++</dd></div>
+<div><dt>Structures</dt><dd>Priority queue, two heaps</dd></div>
+<div><dt>When</dt><dd>February 2025</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Dog breed classifier</h3>
+<p>An image classifier in PyTorch built with transfer learning. I standardized the data, tuned hyperparameters and tracked AUROC and accuracy to check that the model held up on a targeted binary classification task.</p>
+</div>
+<dl>
+<div><dt>Stack</dt><dd>Python, PyTorch</dd></div>
+<div><dt>Metrics</dt><dd>AUROC, accuracy</dd></div>
+<div><dt>When</dt><dd>March 2026</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Shell emulator</h3>
+<p>A command line shell with live line editing, command history and cursor control. Commands go through a modular parser built on argparse, so new ones are easy to add, with error handling and help flags throughout.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>Python</dd></div>
+<div><dt>Parsing</dt><dd>argparse</dd></div>
+<div><dt>When</dt><dd>March 2025</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Stock market model</h3>
+<p>An early experiment that evaluates market movement with Markov chains and state transition matrices.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>Python</dd></div>
+<div><dt>Method</dt><dd>Markov chains</dd></div>
+<div><dt>When</dt><dd>December 2024</dd></div>
+</dl>
+</article>
+
+<h2 id="security">Security</h2>
+<p class="sub">Work from my internship and from security coursework, all done in controlled environments.</p>
+
+<article class="proj">
+<div>
+<h3>CrowdStrike to Jira alert pipeline</h3>
+<p>My internship project on Merit Network’s Information Security team. It pulls detections from CrowdStrike EDR and groups related alerts with a map keyed on shared attributes, so overlapping detections become one ticket instead of many. Records are stored in a SQL database and shown on an approval page where an analyst reviews them before anything is sent to Jira. I presented the finished tool to the team.</p>
+</div>
+<dl>
+<div><dt>Stack</dt><dd>Python, SQL</dd></div>
+<div><dt>APIs</dt><dd>CrowdStrike SDK, Jira REST</dd></div>
+<div><dt>When</dt><dd>June to August 2026</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Application security</h3>
+<p>Control flow hijacking exploits for x86_64 Linux: return-oriented programming chains and custom shellcode injection that get past DEP and ASLR. I used GDB for dynamic analysis and Ghidra to reverse engineer closed source binaries and find the memory corruption bugs.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>C/C++, x86_64 assembly</dd></div>
+<div><dt>Tools</dt><dd>GDB, Ghidra</dd></div>
+<div><dt>When</dt><dd>March 2026</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Network security</h3>
+<p>Forensics on a simulated enterprise breach: I read packet captures in Wireshark to find the malicious hosts and their traffic, and cracked password hashes with John the Ripper. I also wrote Python tools for TLS client certificate generation, DNS-over-TLS queries and TOTP and HOTP multi-factor authentication built from HMAC and SHA-1.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>Python</dd></div>
+<div><dt>Tools</dt><dd>Wireshark, John the Ripper</dd></div>
+<div><dt>When</dt><dd>February 2026</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>Web security</h3>
+<p>Found and exploited vulnerabilities in test websites: cross-site scripting, SQL injection and CSRF. I wrote exploit and automation scripts to pull data out of databases and get around authentication.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>Python, JavaScript, HTML</dd></div>
+<div><dt>Attacks</dt><dd>XSS, SQLi, CSRF</dd></div>
+<div><dt>When</dt><dd>February 2026</dd></div>
+</dl>
+</article>
 
 <h2>Tools I use</h2>
 <ul class="tags">
-<li>C++</li><li>C</li><li>Python</li><li>JavaScript</li><li>C#</li><li>Bash</li><li>Verilog</li><li>Git</li><li>AWS</li><li>STM32CubeIDE</li><li>Wireshark</li><li>Ghidra</li><li>MATLAB</li>
+<li>C++</li><li>C</li><li>Python</li><li>Go</li><li>JavaScript</li><li>Bash</li><li>Verilog</li><li>PostgreSQL</li><li>Docker</li><li>PyTorch</li><li>Git</li><li>AWS</li><li>STM32CubeIDE</li><li>Quartus</li><li>ModelSim</li><li>Wireshark</li><li>Ghidra</li><li>GDB</li><li>John the Ripper</li><li>MATLAB</li>
 </ul>
 
 <footer>
-<a href="#">GitHub</a>
-<a href="#">LinkedIn</a>
-<a href="#">Email</a>
+<a href="https://github.com/RobConfor">GitHub</a>
+<a href="https://www.linkedin.com/in/robert-conforti-979606281/">LinkedIn</a>
+<a href="mailto:rconfor@umich.edu">rconfor@umich.edu</a>
 </footer>
 </main>
 </body>
