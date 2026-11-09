@@ -59,11 +59,8 @@ footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);displa
 <div>
 <h3>Self-balancing autonomous robot</h3>
 <p>A robot that keeps itself upright while it also tracks targets, avoids obstacles and accepts manual control. I wrote a priority-based state machine on an STM32 Nucleo to coordinate those four jobs across I2C, UART and SPI, plus a PID loop above 100 Hz that turns BNO055 IMU readings into motor commands.</p>
-<p>I designed the power side too: a 12V LiPo stepped down to clean 3.3V and 5V rails, and an emergency stop interrupt triggered by a VL53L0X distance sensor. The chassis cracked under load and we rebuilt it twice, and a few bugs we blamed on firmware turned out to be loose wiring.</p>
-</div>
-<dl>
 <div><dt>Chip</dt><dd>STM32 Nucleo (Cortex-M4)</dd></div>
-<div><dt>Control</dt><dd>PID, 100 Hz+</dd></div>
+<div><dt>Language</dt><dd>C/C++</dd></div>
 <div><dt>Sensors</dt><dd>BNO055 IMU, VL53L0X</dd></div>
 <div><dt>Buses</dt><dd>I2C, UART, SPI</dd></div>
 <div><dt>Course</dt><dd>EECS 373, April 2026</dd></div>
@@ -74,12 +71,13 @@ footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);displa
 <div>
 <h3>AltiLink</h3>
 <p>A portable, battery powered PoE switch that doubles as a field analyzer, so you can see what each port is delivering while you’re standing at the install. Built with a team for EECS 473, Advanced Embedded Systems.</p>
+<p>For use by field technicians in areas where power and networking infrastructure has not yet been setup.</p>
 </div>
 <dl>
 <div><dt>Compute</dt><dd>Raspberry Pi 5</dd></div>
 <div><dt>PoE</dt><dd>TPS23861</dd></div>
 <div><dt>Sensing</dt><dd>INA228</dd></div>
-<div><dt>Course</dt><dd>EECS 473</dd></div>
+<div><dt>Course</dt><dd>EECS 473, Septempber 2026</dd></div>
 </dl>
 </article>
 
