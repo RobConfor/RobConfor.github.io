@@ -128,6 +128,20 @@ footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);displa
 
 <article class="proj">
 <div>
+<h3>Thread library</h3>
+<p>A thread library in C++20, built with two teammates for EECS 482 (Operating Systems). It provides threads, mutexes and condition variables on a simulated multiprocessor, and switches between threads with Linux’s ucontext functions. Every queue is FIFO: the ready queue, threads waiting on a mutex, threads waiting on a condition variable and threads waiting to join. That makes the scheduling order predictable.</p>
+<p>There were no lower level locks to build on, so the library disables interrupts around its own critical sections. That way a timer interrupt can’t preempt it halfway through changing shared state. Before writing any code, I spent a week planning how thread states and context switches would fit together. We also wrote a suite of test programs, graded by how many deliberately broken thread libraries they could catch.</p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>C++20</dd></div>
+<div><dt>Platform</dt><dd>Linux, ucontext</dd></div>
+<div><dt>Primitives</dt><dd>Thread, mutex, condition variable</dd></div>
+<div><dt>Course</dt><dd>EECS 482, October 2026</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
 <h3>Terminal chess engine</h3>
 <p>A chess engine in C++ written from scratch: legal move generation, board state and rule validation on fixed size arrays and vectors. It picks moves with Negamax and alpha-beta pruning over a heuristic evaluation, and spreads move evaluation across CPU cores with std::thread, atomic work distribution and mutex protected exception handling.</p>
 </div>
