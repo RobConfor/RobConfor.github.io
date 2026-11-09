@@ -33,6 +33,8 @@ dl div{display:grid;grid-template-columns:5.5rem 1fr;gap:.75rem;padding:.35rem 0
 dt{color:var(--gold)}dd{margin:0;overflow-wrap:anywhere}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;padding:0;list-style:none}
 .tags li{background:var(--chip);padding:.2rem .6rem;border-radius:3px;font:400 .85rem "IBM Plex Mono",ui-monospace,monospace}
+.status{display:inline-block;margin:.6rem 0 0;padding:.15rem .55rem;border:1px solid var(--gold);border-radius:3px;color:var(--gold);font:400 .8rem "IBM Plex Mono",ui-monospace,monospace}
+.proj a{color:var(--pcb);font-weight:500;text-underline-offset:3px}
 footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);display:flex;flex-wrap:wrap;gap:.5rem 2rem}
 @media (max-width:42rem){.proj{grid-template-columns:1fr}main{padding-top:2.5rem}}
 </style>
@@ -59,6 +61,8 @@ footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);displa
 <div>
 <h3>Self-balancing autonomous robot</h3>
 <p>A robot that keeps itself upright while it also tracks targets, avoids obstacles and accepts manual control. I wrote a priority-based state machine on an STM32 Nucleo to coordinate those four jobs across I2C, UART and SPI, plus a PID loop above 100 Hz that turns BNO055 IMU readings into motor commands.</p>
+</div>
+<dl>
 <div><dt>Chip</dt><dd>STM32 Nucleo (Cortex-M4)</dd></div>
 <div><dt>Language</dt><dd>C/C++</dd></div>
 <div><dt>Sensors</dt><dd>BNO055 IMU, VL53L0X</dd></div>
@@ -135,6 +139,22 @@ footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);displa
 <div><dt>Platform</dt><dd>Linux, ucontext</dd></div>
 <div><dt>Primitives</dt><dd>Thread, mutex, condition variable</dd></div>
 <div><dt>Course</dt><dd>EECS 482, October 2026</dd></div>
+</dl>
+</article>
+
+<article class="proj">
+<div>
+<h3>C++ standard library from scratch</h3>
+<p class="status">In progress</p>
+<p>I’m rebuilding parts of the C++ standard library myself to learn the language more deeply and to see how common data structures work under the hood. Using them is easy. Writing them makes you deal with the things the interface hides: memory, object lifetimes, and what happens when something throws halfway through.</p>
+<p>The vector manages raw memory through an allocator, constructing and destroying each element itself. It doubles capacity as it grows, moves elements during reallocation when that’s safe, and cleans up if a constructor throws, so nothing leaks. The priority queue is a pairing heap built from linked nodes, with two pass merging on pop and support for raising an element’s priority in place. The hash map uses open addressing with linear probing, tombstones for deleted entries, and a rehash once it’s half full. There’s also a move only unique_ptr. A stack, queue, map, set and any are next.</p>
+<p><a href="https://github.com/RobConfor/c-stl">Code on GitHub</a></p>
+</div>
+<dl>
+<div><dt>Language</dt><dd>C++</dd></div>
+<div><dt>Built</dt><dd>vector, priority_queue, unordered_map, unique_ptr</dd></div>
+<div><dt>Next</dt><dd>stack, queue, map, set, any</dd></div>
+<div><dt>When</dt><dd>2026, ongoing</dd></div>
 </dl>
 </article>
 
