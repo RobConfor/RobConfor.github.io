@@ -147,7 +147,7 @@ footer{margin-top:4.5rem;padding-top:1rem;border-top:3px solid var(--pcb);displa
 <div>
 <h3>C++ standard library from scratch</h3>
 <p class="status">In progress</p>
-<p>I’m rebuilding parts of the C++ standard library myself to learn the language more deeply and to see how common data structures work under the hood. Using them is easy. Writing them makes you deal with the things the interface hides: memory, object lifetimes, and what happens when something throws halfway through.</p>
+<p>I’m rebuilding parts of the C++ standard library myself to learn the language more deeply and to see how common data structures work under the hood.</p>
 <p>The vector manages raw memory through an allocator, constructing and destroying each element itself. It doubles capacity as it grows, moves elements during reallocation when that’s safe, and cleans up if a constructor throws, so nothing leaks. The priority queue is a pairing heap built from linked nodes, with two pass merging on pop and support for raising an element’s priority in place. The hash map uses open addressing with linear probing, tombstones for deleted entries, and a rehash once it’s half full. There’s also a move only unique_ptr. A stack, queue, map, set and any are next.</p>
 </div>
 <dl>
